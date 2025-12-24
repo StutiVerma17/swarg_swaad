@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWARG SWAAD  - Order Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🍝 SWARG SWAAD </h1>
+                    <p class="tagline">KHANE KHANE ME SAWAD</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search menu items...">
+                    </div>
+                    <button class="cart-btn" id="cartBtn">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">All Items</button>
+                <button class="tab-btn" data-category="appetizers">Appetizers</button>
+                <button class="tab-btn" data-category="mains">Main Courses</button>
+                <button class="tab-btn" data-category="desserts">Desserts</button>
+                <button class="tab-btn" data-category="beverages">Beverages</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items will be dynamically loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar hidden" id="cartSidebar">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Order</h2>
+                <button class="close-cart" id="closeCart">×</button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            
+            <div class="cart-footer">
+                <div class="cart-totals">
+                    <div class="subtotal">
+                        <span>Subtotal: </span>
+                        <span id="subtotal">₹0.00</span>
+                    </div>
+                    <div class="tax">
+                        <span>Tax (1.5%): </span>
+                        <span id="tax">₹0.00</span>
+                    </div>
+                    <div class="total">
+                        <span>Total: </span>
+                        <span id="total">₹0.00</span>
+                    </div>
+                </div>
+                
+                <div class="order-details">
+                    <input type="text" id="customerName" placeholder="Your Name" required>
+                    <select id="tableNumber" required>
+                        <option value="">Select Table</option>
+                        <option value="1">Table 1</option>
+                        <option value="2">Table 2</option>
+                        <option value="3">Table 3</option>
+                        <option value="4">Table 4</option>
+                        <option value="5">Table 5</option>
+                        <option value="takeout">Takeout</option>
+                    </select>
+                    <textarea id="specialInstructions" placeholder="Special instructions (optional)"></textarea>
+                    
+                    <div class="order-type">
+                        <label><input type="radio" name="orderType" value="dine-in" checked> Dine-in</label>
+                        <label><input type="radio" name="orderType" value="takeout"> Takeout</label>
+                        <label><input type="radio" name="orderType" value="delivery"> Delivery</label>
+                    </div>
+                </div>
+                
+                <button class="place-order-btn" id="placeOrder">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal hidden" id="confirmationModal">
+        <div class="modal-content">
+            <h2>Order Confirmed! 🎉</h2>
+            <div id="confirmationDetails"></div>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- This extra button can be removed. -->
+    <!-- Cart section me ye button add karo
+<button onclick="confirmOrder()" class="order-btn" style="background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 10px; cursor: pointer;">
+    Confirm Order
+</button> -->
+
+
+    <script src="script.js"></script>
+</body>
+</html>
